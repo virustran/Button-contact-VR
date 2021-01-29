@@ -7,6 +7,7 @@ Tested up to: 5.5
 Requires PHP: 5.6
 License: 2.1
 License URI: http://www.gnu.org/licenses/gpl.html
+Developer: https://github.com/virustran/button-contact-vr/tree/develop
 
 Button contact VR
 

@@ -3,7 +3,7 @@
  * Plugin Name: Button contact VR
  * Plugin URI: virustran.vr
  * Description: Button contact call, zalo, chat...
- * Version: 2.1
+ * Version: 3.0
  * Author: VirusTran
  * Author URI: virustran
  * License: GPLv2
@@ -38,6 +38,13 @@ function register_mysettings() {
     register_setting( 'pzf-settings-group-setting', 'pzf_location_bottom' );
     register_setting( 'pzf-settings-group-setting', 'pzf_hide_mobile' );
     register_setting( 'pzf-settings-group-setting', 'pzf_hide_desktop' );
+// page setting  sine: 3.0
+    register_setting( 'pzf_settings_all_in_one', 'pzf_enable_all_in_one' );
+    register_setting( 'pzf_settings_all_in_one', 'pzf_note_all_in_one' );
+    register_setting( 'pzf_settings_all_in_one', 'pzf_note_bar_all_in_one' );
+    register_setting( 'pzf_settings_all_in_one', 'pzf_color_all_in_one' );
+    register_setting( 'pzf_settings_all_in_one', 'pzf_icon_all_in_one' );
+    register_setting( 'pzf_settings_all_in_one', 'pzf_hide_default_all_in_one' );
 }
 
 require_once PZF_PATH . '/inc/button-contact.php';
@@ -47,8 +54,9 @@ function pzf_create_menu() {
     add_menu_page('Button contact VR', 'Button contact', 'administrator', 'contact_vr', 'pzf_settings_page',plugins_url('/img/icon.png', __FILE__), 100);
     add_action( 'admin_init', 'register_mysettings' );
 
-// add_menu_page( string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '', string $icon_url = '', int $position = null )
-add_submenu_page( 'contact_vr', 'Setting', 'Setting', 'administrator', 'contact_vr_setting', 'pzf_settings_page_setting', 10 );
+    // add_menu_page( string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '', string $icon_url = '', int $position = null )
+    add_submenu_page( 'contact_vr', 'Setting', 'Setting', 'administrator', 'contact_vr_setting', 'pzf_settings_page_setting', 10 );
+    add_submenu_page( 'contact_vr', 'All in one', 'All in one', 'administrator', 'contact_vr_all_in_one', 'pzf_settings_all_in_one', 20 );
 
 }
 add_action('admin_menu', 'pzf_create_menu'); 
@@ -58,6 +66,9 @@ function pzf_settings_page() {
 }
 function pzf_settings_page_setting() {
     include PZF_PATH. '/inc/setting.php';
+}
+function pzf_settings_all_in_one() {
+    include PZF_PATH. '/inc/all-in-one.php';
 }
 
 PZF::instance();

@@ -3,10 +3,10 @@ Contributors: VirusTran
 Tags: Phone, call, zalo, viber, contact, chat
 Donate link: paypal.me/virustran
 Requires at least: 5.0
-Tested up to: 5.5
+Tested up to: 5.7
 Requires PHP: 5.6
-License: 2.1
-Developer: https://github.com/virustran/button-contact-vr/tree/develop
+License: 3.0
+Developer: https://github.com/virustran/button-contact-vr/tree/develops
 License URI: http://www.gnu.org/licenses/gpl.html
 
 Button contact VR
@@ -16,6 +16,7 @@ Button contact VR
 Fixed Hotline, zalo, viber, contact, chat facebook, ...
 Location left - right - bottom
 Size scale
+All in one
 
 === From within WordPress ===
 
@@ -33,6 +34,9 @@ Size scale
 1. Visit \Plugins > Add New
 2. Search for \Button contact VR\
 3. Activate Button contact VR from your Plugins page.
+
+== Help ==
+https://webvocuc.com/blog/tag/button-contact-vr
 
 == Screenshots ==
 1. Visit Plugins > Search for Button contact VR
@@ -60,3 +64,7 @@ Size scale
 * Release Date - 29/07/2020.
 * Fix hotline bar
 * Add menu Advanced settings
+
+= 3.0 =
+* Release Date - 07/07/2021.
+* Add menu All in one

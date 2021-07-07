@@ -25,6 +25,8 @@ final class PZF {
 	public function enqueue_scripts() {
 		wp_enqueue_style( 'pzf-style', PZF_URL . 'css/style.css', array() );
 	}
+	// public function enqueue_scripts() {
+	// }
 
 	// add scripts to frontend
 	function mw_enqueue_color_picker() {
@@ -34,83 +36,122 @@ final class PZF {
 
 	// add frontend to footer theme
 	public function pzf_frontend() { ?>
-		<div id="button-contact-vr">
-			<!-- contact -->
-			<?php
-			if(get_option('pzf_contact_link')){
-			?>
-			<div id="contact-vr" class="button-contact">
-				<div class="phone-vr">
-					<div class="phone-vr-circle-fill"></div>
-					<div class="phone-vr-img-circle">
-						<a href="<?php echo get_option('pzf_contact_link'); ?>">				
-							<img src="<?php echo PZF_URL.'img/contact.png'; ?>" />
-						</a>
+		<!-- if gom all in one show -->
+		<?php if(get_option('pzf_hide_default_all_in_one')){
+			$class_active_allinone = '';
+		}elseif (!get_option('pzf_enable_all_in_one')) {
+			$class_active_allinone = '';
+		}
+		else{
+			$class_active_allinone = 'active';
+		}?>
+		<div id="button-contact-vr" class="<?php echo $class_active_allinone;?>">
+			<div id="gom-all-in-one"><!-- v3 -->
+				<!-- contact -->
+				<?php
+				if(get_option('pzf_contact_link')){
+				?>
+				<div id="contact-vr" class="button-contact">
+					<div class="phone-vr">
+						<div class="phone-vr-circle-fill"></div>
+						<div class="phone-vr-img-circle">
+							<a href="<?php echo get_option('pzf_contact_link'); ?>">				
+								<img src="<?php echo PZF_URL.'img/contact.png'; ?>" />
+							</a>
+						</div>
 					</div>
-				</div>
-				</div>
-			<?php }; ?>
-			<!-- end contact -->
+					</div>
+				<?php }; ?>
+				<!-- end contact -->
 
-			<!-- viber -->
-			<?php
-			if(get_option('pzf_viber')){
-			?>
-			<div id="viber-vr" class="button-contact">
-				<div class="phone-vr">
-					<div class="phone-vr-circle-fill"></div>
-					<div class="phone-vr-img-circle">
-						<a target="_blank" href="viber://add?number=<?php echo preg_replace( '/\D/', '',get_option('pzf_viber')); ?>">				
-							<img src="<?php echo PZF_URL.'img/viber.png'; ?>" />
-						</a>
+				<!-- viber -->
+				<?php
+				if(get_option('pzf_viber')){
+				?>
+				<div id="viber-vr" class="button-contact">
+					<div class="phone-vr">
+						<div class="phone-vr-circle-fill"></div>
+						<div class="phone-vr-img-circle">
+							<a target="_blank" href="viber://add?number=<?php echo preg_replace( '/\D/', '',get_option('pzf_viber')); ?>">				
+								<img src="<?php echo PZF_URL.'img/viber.png'; ?>" />
+							</a>
+						</div>
 					</div>
-				</div>
-				</div>
-			<?php }; ?>
-			<!-- end viber -->
+					</div>
+				<?php }; ?>
+				<!-- end viber -->
 
-			<!-- zalo -->
-			<?php
-			if(get_option('pzf_zalo')){
-			?>
-			<div id="zalo-vr" class="button-contact">
-				<div class="phone-vr">
-					<div class="phone-vr-circle-fill"></div>
-					<div class="phone-vr-img-circle">
-						<a target="_blank" href="https://zalo.me/<?php echo preg_replace( '/\D/', '',get_option('pzf_zalo')); ?>">				
-							<img src="<?php echo PZF_URL.'img/zalo.png'; ?>" />
-						</a>
+				<!-- zalo -->
+				<?php
+				if(get_option('pzf_zalo')){
+				?>
+				<div id="zalo-vr" class="button-contact">
+					<div class="phone-vr">
+						<div class="phone-vr-circle-fill"></div>
+						<div class="phone-vr-img-circle">
+							<a target="_blank" href="https://zalo.me/<?php echo preg_replace( '/\D/', '',get_option('pzf_zalo')); ?>">				
+								<img src="<?php echo PZF_URL.'img/zalo.png'; ?>" />
+							</a>
+						</div>
 					</div>
-				</div>
-				</div>
-			<?php }; ?>
-			<!-- end zalo -->
+					</div>
+				<?php }; ?>
+				<!-- end zalo -->
 
-			<!-- Phone -->
-			<?php
-			if(get_option('pzf_phone')){
-			?>
-			<div id="phone-vr" class="button-contact">
-				<div class="phone-vr">
-					<div class="phone-vr-circle-fill"></div>
-					<div class="phone-vr-img-circle">
-						<a href="tel:<?php echo preg_replace( '/\D/', '',get_option('pzf_phone')); ?>">				
-							<img src="<?php echo PZF_URL.'img/phone.png'; ?>" />
-						</a>
+				<!-- Phone -->
+				<?php
+				if(get_option('pzf_phone')){
+				?>
+				<div id="phone-vr" class="button-contact">
+					<div class="phone-vr">
+						<div class="phone-vr-circle-fill"></div>
+						<div class="phone-vr-img-circle">
+							<a href="tel:<?php echo preg_replace( '/\D/', '',get_option('pzf_phone')); ?>">				
+								<img src="<?php echo PZF_URL.'img/phone.png'; ?>" />
+							</a>
+						</div>
 					</div>
-				</div>
-				</div>
-				<?php 
-					if(get_option('pzf_phone_bar') == '1'){ ?>
-					<div class="phone-bar">
-						<a href="tel:<?php echo preg_replace( '/\D/', '',get_option('pzf_phone')); ?>">
-							<span class="text-phone"><?php echo get_option('pzf_phone'); ?></span>
-						</a>
 					</div>
-				<?php };?>
+					<?php 
+						if(get_option('pzf_phone_bar') == '1'){ ?>
+						<div class="phone-bar phone-bar-n">
+							<a href="tel:<?php echo preg_replace( '/\D/', '',get_option('pzf_phone')); ?>">
+								<span class="text-phone"><?php echo get_option('pzf_phone'); ?></span>
+							</a>
+						</div>
+					<?php };?>
 
-			<?php }; ?>
-		<!-- end phone -->
+				<?php }; ?>
+				<!-- end phone -->
+			</div><!-- end v3 class gom-all-in-one -->
+
+			<?php
+			if(get_option('pzf_enable_all_in_one')){ ?>
+				<div id="all-in-one-vr" class="button-contact">
+					<div class="phone-vr">
+						<div class="phone-vr-circle-fill"></div>
+						<div class="phone-vr-img-circle">			
+							<img src="<?php echo PZF_URL.'img/icon'.get_option('pzf_icon_all_in_one').'.png'; ?>" />
+						</div>
+					</div>					
+					<?php 
+						if(get_option('pzf_note_bar_all_in_one') == '1'){ ?>
+					<div class="phone-bar" style="background-color: <?php echo get_option('pzf_color_all_in_one'); ?>;">
+						<span class="text-phone"><?php echo get_option('pzf_note_all_in_one'); ?></span>
+					</div>
+					<?php };?>
+				</div>				
+				<style type="text/css">.phone-bar-n{display: none;}</style>
+					
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+	    $('#all-in-one-vr').click(function(){
+		    $('#button-contact-vr').toggleClass('active');
+		})
+	});
+</script>
+			<?php };?>
+
 		</div>
 			<!-- Facebook Messenger -->
 			<?php
@@ -166,6 +207,17 @@ final class PZF {
 			}
 		</style>
 			<?php };?>
+		<!-- color all in one -->
+		<?php if(get_option('pzf_color_all_in_one')){ ?>
+		<style>
+			#all-in-one-vr .phone-vr-circle-fill,#all-in-one-vr .phone-vr-img-circle {
+			    background-color: <?php echo get_option('pzf_color_all_in_one'); ?>;
+			}
+			#all-in-one-vr .phone-vr-circle-fill {
+			    opacity: 0.7;box-shadow: 0 0 0 0 <?php echo get_option('pzf_color_all_in_one'); ?>;
+			}
+		</style>
+			<?php };?>
 
 		<!-- size scale -->
 		<?php if(get_option('setting_size')){?>
@@ -189,11 +241,8 @@ final class PZF {
 		<?php if(get_option('pzf_location') == 'right'){ ?>
 		<style>
 			#button-contact-vr {right:0;}
-			.phone-bar a {
-			    left: auto;
-			    right: 30px;
-			    padding: 8px 55px 7px 15px;
-			}
+			.phone-bar a {left: auto;right: 30px;padding: 8px 55px 7px 15px;}
+			#button-contact-vr.active #gom-all-in-one .button-contact {margin-left: 100%;}
 		</style>
 			<?php };?>
 

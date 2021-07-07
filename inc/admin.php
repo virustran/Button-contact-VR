@@ -3,6 +3,7 @@
 
 <h2 class="nav-tab-wrapper">
     <a href="admin.php?page=contact_vr" class="nav-tab nav-tab-active">Button contact</a>
+    <a href="admin.php?page=contact_vr_all_in_one" class="nav-tab">All in one (beta)</a>
     <a href="admin.php?page=contact_vr_setting" class="nav-tab ">Setting</a>
 </h2>
 
@@ -60,7 +61,7 @@
         <tr valign="top">
             <th scope="row">ID fanpage</th>
             <td><input placeholder="" type="text" name="pzf_id_fanpage" value="<?php echo get_option('pzf_id_fanpage'); ?>" /><br>
-                <i>Find your Facebook ID? <a href="https://findmyfbid.com/" target="_blank" rel="nofollow">click</a></i></td>
+                <i>Find your Facebook ID? <a href="https://webvocuc.com/blog/cach-tim-id-fanpage-hieu-qua-va-nhanh-chong.html" target="_blank">help</a> or <a href="https://lookup-id.com/" target="_blank" rel="nofollow">click</a></i></td>
         </tr>          
         <tr valign="top">
             <th scope="row">Color messenger</th>
@@ -83,6 +84,10 @@
 <h2><?php esc_html_e( 'Support', 'support_pzf' ); ?></h2>
 <p>
 <?php _e( 'For submitting any support queries, feedback, bug reports or feature requests, please visit <a href="https://wordpress.org/plugins/button-contact-vr/" target="_blank">this link</a>.', 'support_pzf' ); ?>
+</p>
+<h2><?php esc_html_e( 'Help', 'support_pzf' ); ?></h2>
+<p>
+<?php _e( 'Please visit <a href="https://webvocuc.com/blog/tag/button-contact-vr" target="_blank">this link</a>.', 'help_pzf' ); ?>
 </p>
 
 </div>

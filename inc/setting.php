@@ -3,6 +3,7 @@
 <h2>Advanced settings</h2>
 <h2 class="nav-tab-wrapper">
     <a href="admin.php?page=contact_vr" class="nav-tab">Button contact</a>
+    <a href="admin.php?page=contact_vr_all_in_one" class="nav-tab">All in one (beta)</a>
     <a href="admin.php?page=contact_vr_setting" class="nav-tab  nav-tab-active">Setting</a>
 </h2>
 <?php if( isset($_GET['settings-updated']) ) { ?>
@@ -53,6 +54,10 @@
 <h2><?php esc_html_e( 'Support', 'support_pzf' ); ?></h2>
 <p>
 <?php _e( 'For submitting any support queries, feedback, bug reports or feature requests, please visit <a href="https://wordpress.org/plugins/button-contact-vr/" target="_blank">this link</a>.', 'support_pzf' ); ?>
+</p>
+<h2><?php esc_html_e( 'Help', 'support_pzf' ); ?></h2>
+<p>
+<?php _e( 'Please visit <a href="https://webvocuc.com/blog/tag/button-contact-vr" target="_blank">this link</a>.', 'help_pzf' ); ?>
 </p>
 
 </div>
